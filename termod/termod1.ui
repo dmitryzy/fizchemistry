@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>816</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Уравнение состояния</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>120</y>
+      <width>491</width>
+      <height>248</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="verticalSpacing">
+      <number>10</number>
+     </property>
+     <item row="7" column="0">
+      <widget class="QPushButton" name="btn_calc">
+       <property name="text">
+        <string>Вычислить результат</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QPushButton" name="btn_clear">
+       <property name="text">
+        <string>Вернуть стандартные значения</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lb_pressure">
+       <property name="text">
+        <string>Давление, Па</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lb_a">
+       <property name="text">
+        <string>а (для уравнения Ван-Дер-Ваальса)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lb_temperatur">
+       <property name="text">
+        <string>Температура, К</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lb_moll">
+       <property name="text">
+        <string>Количество вещества, моль</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lb_volume">
+       <property name="text">
+        <string>Объем, м&lt;sup&gt;3&lt;/sup&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&lt;center&gt;&lt;b&gt;Значение&lt;/b&gt;&lt;/center&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;b&gt;&lt;center&gt;Параметр&lt;/center&gt;&lt;/b&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lb_b">
+       <property name="text">
+        <string>b (для уравнения Ван-Дер-Ваальса)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QDoubleSpinBox" name="SBpressure">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QDoubleSpinBox" name="SBtemperature">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QDoubleSpinBox" name="SBvolume">
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="SBmoll">
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QDoubleSpinBox" name="SBa">
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+       <property name="value">
+        <double>0.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QDoubleSpinBox" name="SBb">
+       <property name="maximum">
+        <double>1000000000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>390</y>
+      <width>781</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Описание работы с программой&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Выберите вычисляемую величину из списка &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Выполнить расчет&lt;/span&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Выберите уравнение для расчета. &lt;/p&gt;&lt;p&gt;Доступны: уравнение Менделеева-Клапейрона (для идеального газа); уравнение Ван-Дер-Ваальса (для реального газа).&lt;/p&gt;&lt;p&gt;Укажите значения исходных параметров в колонке &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Значения&lt;/span&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;Для вычисления нажмите на кнопку &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Результат&lt;/span&gt;&amp;quot;. Строка с вычисленной величиной будет выделена красным шрифтом.&lt;/p&gt;&lt;p&gt;Чтобы вернуть значения по умолчанию нажмите на кнопку &amp;quot;&lt;span style=&quot; font-weight:600;&quot;&gt;Вернуть стандартные значения&lt;/span&gt;&amp;quot;.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>0</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Уравнение состояния газов&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>291</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Выполнить расчет:</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>271</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QRadioButton" name="rb_pressure">
+        <property name="text">
+         <string>Давления</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_temperature">
+        <property name="text">
+         <string>Температуры</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_volume">
+        <property name="text">
+         <string>Объема</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_moll">
+        <property name="text">
+         <string>Количества вещества</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>291</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Для рассчетов использовать:</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>271</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="chbMend">
+        <property name="text">
+         <string>Уравнение Менделеева-Клапейрона</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="chbVander">
+        <property name="text">
+         <string>Уравнение Ван-Дер-Ваальса</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="lb_result">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>781</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgb(255, 255, 255)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>816</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_calc</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnCalc()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_moll</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekVariable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_pressure</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekVariable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_temperature</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekVariable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_volume</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekVariable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>476</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chbMend</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekEqv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chbVander</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chekEqv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btnClear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>679</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>407</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btnCalc()</slot>
+  <slot>chekVariable()</slot>
+  <slot>chekEqv()</slot>
+  <slot>btnClear()</slot>
+ </slots>
+</ui>
